@@ -7,6 +7,50 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        /* 重置默认样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* 处理移动端状态栏 */
+        body {
+            padding-top: env(safe-area-inset-top);
+            padding-bottom: env(safe-area-inset-bottom);
+            padding-left: env(safe-area-inset-left);
+            padding-right: env(safe-area-inset-right);
+        }
+        
+        /* 优化滚动体验 */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* 确保内容区域可以正常滚动 */
+        #mainApp {
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        /* 底部导航固定定位 */
+        .bottom-navigation {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+        }
+        
         .line-clamp-2 {
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -66,7 +110,7 @@
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50" style="margin: 0; padding: 0; overflow-x: hidden;">
     <!-- 登录页面 -->
     <div id="loginPage" class="bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
         <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
@@ -129,9 +173,9 @@
     </div>
 
     <!-- 主应用页面 -->
-    <div id="mainApp" class="min-h-screen bg-gray-50" style="display: none;">
+    <div id="mainApp" class="min-h-screen bg-gray-50" style="display: none; margin: 0; padding: 0;">
         <!-- 内容区域 -->
-        <div class="pb-20">
+        <div class="pb-32">
             <!-- 首页 -->
             <div id="homeTab" class="tab-content active">
                 <div class="bg-white shadow-sm">
@@ -210,6 +254,95 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- 最新动态 -->
+                <div class="px-4 py-6">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">最新动态</h2>
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-blue-600 text-sm">📢</span>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-medium text-gray-900 text-sm">系统维护通知</h3>
+                                    <p class="text-gray-600 text-xs mt-1">系统将于今晚22:00-24:00进行维护，期间部分功能可能无法使用</p>
+                                    <span class="text-gray-400 text-xs">2小时前</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-green-600 text-sm">✅</span>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-medium text-gray-900 text-sm">新功能上线</h3>
+                                    <p class="text-gray-600 text-xs mt-1">身份证办理在线预约功能已上线，支持提前预约办理时间</p>
+                                    <span class="text-gray-400 text-xs">1天前</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-orange-600 text-sm">📋</span>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-medium text-gray-900 text-sm">政策更新</h3>
+                                    <p class="text-gray-600 text-xs mt-1">《关于进一步优化营商环境的实施意见》已发布</p>
+                                    <span class="text-gray-400 text-xs">3天前</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 便民服务 -->
+                <div class="px-4 py-6">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">便民服务</h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center mb-3">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-blue-600 text-sm">🏥</span>
+                                </div>
+                                <h3 class="font-medium text-gray-900 text-sm">医疗健康</h3>
+                            </div>
+                            <p class="text-gray-600 text-xs">预约挂号、健康档案查询</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center mb-3">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-green-600 text-sm">🎓</span>
+                                </div>
+                                <h3 class="font-medium text-gray-900 text-sm">教育服务</h3>
+                            </div>
+                            <p class="text-gray-600 text-xs">学籍查询、教育缴费</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center mb-3">
+                                <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-purple-600 text-sm">🏠</span>
+                                </div>
+                                <h3 class="font-medium text-gray-900 text-sm">住房服务</h3>
+                            </div>
+                            <p class="text-gray-600 text-xs">房产查询、公积金服务</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center mb-3">
+                                <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-orange-600 text-sm">🚗</span>
+                                </div>
+                                <h3 class="font-medium text-gray-900 text-sm">交通出行</h3>
+                            </div>
+                            <p class="text-gray-600 text-xs">违章查询、公交查询</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 底部间距 -->
+                <div class="h-8"></div>
             </div>
 
             <!-- 事务页面 -->
@@ -224,6 +357,89 @@
                         <!-- 事务列表将通过JavaScript动态生成 -->
                     </div>
                 </div>
+
+                <!-- 事务统计 -->
+                <div class="px-4 py-6">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">事务统计</h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-gray-600">本月办理</p>
+                                    <p class="text-2xl font-bold text-blue-600">12</p>
+                                </div>
+                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <span class="text-blue-600 text-xl">📊</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm text-gray-600">平均用时</p>
+                                    <p class="text-2xl font-bold text-green-600">3.2天</p>
+                                </div>
+                                <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                                    <span class="text-green-600 text-xl">⏱️</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 办理指南 -->
+                <div class="px-4 py-6">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">办理指南</h2>
+                    <div class="space-y-3">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-blue-600 text-sm">1</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-gray-900 text-sm">准备材料</h3>
+                                    <p class="text-gray-600 text-xs">根据办理事项准备所需材料</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-blue-600 text-sm">2</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-gray-900 text-sm">在线预约</h3>
+                                    <p class="text-gray-600 text-xs">选择合适的时间进行预约</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-blue-600 text-sm">3</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-gray-900 text-sm">现场办理</h3>
+                                    <p class="text-gray-600 text-xs">按时到达指定地点办理</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-blue-600 text-sm">4</span>
+                                </div>
+                                <div>
+                                    <h3 class="font-medium text-gray-900 text-sm">进度查询</h3>
+                                    <p class="text-gray-600 text-xs">实时查看办理进度</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 底部间距 -->
+                <div class="h-8"></div>
             </div>
 
             <!-- 政策页面 -->
@@ -245,6 +461,86 @@
                         <!-- 政策列表将通过JavaScript动态生成 -->
                     </div>
                 </div>
+
+                <!-- 政策解读服务 -->
+                <div class="px-4 py-6">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">政策解读服务</h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center mb-3">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-blue-600 text-sm">📞</span>
+                                </div>
+                                <h3 class="font-medium text-gray-900 text-sm">在线咨询</h3>
+                            </div>
+                            <p class="text-gray-600 text-xs">专业政策解读咨询服务</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center mb-3">
+                                <div class="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-green-600 text-sm">📋</span>
+                                </div>
+                                <h3 class="font-medium text-gray-900 text-sm">政策申请</h3>
+                            </div>
+                            <p class="text-gray-600 text-xs">政策相关业务申请</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center mb-3">
+                                <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-purple-600 text-sm">📊</span>
+                                </div>
+                                <h3 class="font-medium text-gray-900 text-sm">政策分析</h3>
+                            </div>
+                            <p class="text-gray-600 text-xs">政策影响分析报告</p>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center mb-3">
+                                <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-orange-600 text-sm">📈</span>
+                                </div>
+                                <h3 class="font-medium text-gray-900 text-sm">政策追踪</h3>
+                            </div>
+                            <p class="text-gray-600 text-xs">政策执行情况追踪</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 政策日历 -->
+                <div class="px-4 py-6">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">政策日历</h2>
+                    <div class="space-y-3">
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-medium text-gray-900 text-sm">营商环境优化月</h3>
+                                    <p class="text-gray-600 text-xs">2024年3月1日 - 3月31日</p>
+                                </div>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-600 text-xs rounded-full">进行中</span>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-medium text-gray-900 text-sm">便民服务周</h3>
+                                    <p class="text-gray-600 text-xs">2024年3月15日 - 3月21日</p>
+                                </div>
+                                <span class="px-2 py-1 bg-green-100 text-green-600 text-xs rounded-full">即将开始</span>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 shadow-sm">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="font-medium text-gray-900 text-sm">政策宣讲会</h3>
+                                    <p class="text-gray-600 text-xs">2024年3月25日 14:00-16:00</p>
+                                </div>
+                                <span class="px-2 py-1 bg-orange-100 text-orange-600 text-xs rounded-full">报名中</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 底部间距 -->
+                <div class="h-8"></div>
             </div>
 
             <!-- 政务人员待办事项页面 -->
@@ -674,6 +970,9 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- 底部间距 -->
+                <div class="h-32"></div>
             </div>
 
             <!-- 事务详情页面 -->
@@ -687,6 +986,8 @@
                         <!-- 事务详情内容将通过JavaScript动态生成 -->
                     </div>
                 </div>
+                <!-- 底部间距 -->
+                <div class="h-50"></div>
             </div>
         </div>
 
@@ -945,98 +1246,98 @@
             '民政局': [
                 {
                     id: 'marriage-policy-1',
-                    title: '婚姻登记管理条例',
-                    description: '规范婚姻登记程序，保障婚姻自由',
-                    category: '婚姻登记',
-                    publishDate: '2024-01-15',
+                    title: '2025年婚姻登记数字化服务规范',
+                    description: '推进婚姻登记数字化转型，提升服务效率',
+                    category: '数字化服务',
+                    publishDate: '2025-01-15',
                     department: '民政局',
-                    content: '本规定旨在规范婚姻登记程序，保障公民婚姻自由权利...'
+                    content: '本规范旨在推进婚姻登记数字化转型，提升服务效率和质量...'
                 },
                 {
                     id: 'adoption-policy-1',
-                    title: '收养登记管理办法',
-                    description: '规范收养登记程序，保护被收养人权益',
-                    category: '收养登记',
-                    publishDate: '2024-01-10',
+                    title: '2025年收养登记智慧化管理办法',
+                    description: '运用智慧化手段优化收养登记流程',
+                    category: '智慧化管理',
+                    publishDate: '2025-01-10',
                     department: '民政局',
-                    content: '本办法规定了收养登记的程序和要求...'
+                    content: '本办法运用智慧化手段优化收养登记流程，提升服务质量...'
                 }
             ],
             '公安局': [
                 {
                     id: 'idcard-policy-1',
-                    title: '居民身份证管理条例',
-                    description: '规范身份证办理和使用',
-                    category: '身份证管理',
-                    publishDate: '2024-01-20',
+                    title: '2025年居民身份证智能化管理条例',
+                    description: '推进身份证办理智能化，提升便民服务水平',
+                    category: '智能化管理',
+                    publishDate: '2025-01-20',
                     department: '公安局',
-                    content: '本条例规定了居民身份证的申领、换领、补领程序...'
+                    content: '本条例推进身份证办理智能化，提升便民服务水平...'
                 }
             ],
             '市场监督管理局': [
                 {
                     id: 'business-policy-1',
-                    title: '市场主体登记管理条例',
-                    description: '规范市场主体登记程序',
-                    category: '工商登记',
-                    publishDate: '2024-01-18',
+                    title: '2025年市场主体数字化登记管理条例',
+                    description: '推进市场主体登记数字化转型',
+                    category: '数字化登记',
+                    publishDate: '2025-01-18',
                     department: '市场监督管理局',
-                    content: '本条例规范了市场主体的登记程序和要求...'
+                    content: '本条例推进市场主体登记数字化转型，提升登记效率...'
                 }
             ],
             '人力资源和社会保障局': [
                 {
                     id: 'social-policy-1',
-                    title: '社会保险法实施条例',
-                    description: '规范社会保险缴纳和待遇享受',
-                    category: '社会保障',
-                    publishDate: '2024-01-12',
+                    title: '2025年社会保险数字化服务条例',
+                    description: '推进社会保险服务数字化转型',
+                    category: '数字化服务',
+                    publishDate: '2025-01-12',
                     department: '人力资源和社会保障局',
-                    content: '本条例规定了社会保险的缴纳和待遇享受程序...'
+                    content: '本条例推进社会保险服务数字化转型，提升服务体验...'
                 }
             ],
             '卫生健康委员会': [
                 {
                     id: 'health-policy-1',
-                    title: '医疗机构管理条例',
-                    description: '规范医疗机构执业行为',
-                    category: '医疗卫生',
-                    publishDate: '2024-01-16',
+                    title: '2025年智慧医疗服务管理条例',
+                    description: '推进医疗服务智慧化发展',
+                    category: '智慧医疗',
+                    publishDate: '2025-01-16',
                     department: '卫生健康委员会',
-                    content: '本条例规范了医疗机构的执业行为和管理要求...'
+                    content: '本条例推进医疗服务智慧化发展，提升医疗服务质量...'
                 }
             ],
             '教育局': [
                 {
                     id: 'education-policy-1',
-                    title: '民办教育促进法实施条例',
-                    description: '促进民办教育健康发展',
-                    category: '教育管理',
-                    publishDate: '2024-01-14',
+                    title: '2025年智慧教育发展促进条例',
+                    description: '推进教育数字化转型，促进智慧教育发展',
+                    category: '智慧教育',
+                    publishDate: '2025-01-14',
                     department: '教育局',
-                    content: '本条例旨在促进民办教育的健康发展...'
+                    content: '本条例推进教育数字化转型，促进智慧教育发展...'
                 }
             ],
             '交通局': [
                 {
                     id: 'traffic-policy-1',
-                    title: '道路交通安全管理条例',
-                    description: '规范道路交通安全管理',
-                    category: '交通管理',
-                    publishDate: '2024-01-17',
+                    title: '2025年智慧交通管理服务条例',
+                    description: '推进交通管理智慧化，提升出行体验',
+                    category: '智慧交通',
+                    publishDate: '2025-01-17',
                     department: '交通局',
-                    content: '本条例规范了道路交通安全管理要求...'
+                    content: '本条例推进交通管理智慧化，提升市民出行体验...'
                 }
             ],
             '税务局': [
                 {
                     id: 'tax-policy-1',
-                    title: '税收征收管理法实施条例',
-                    description: '规范税收征收管理程序',
-                    category: '税务管理',
-                    publishDate: '2024-01-19',
+                    title: '2025年智慧税务服务管理条例',
+                    description: '推进税务服务智慧化，优化营商环境',
+                    category: '智慧税务',
+                    publishDate: '2025-01-19',
                     department: '税务局',
-                    content: '本条例规范了税收征收管理程序和要求...'
+                    content: '本条例推进税务服务智慧化，优化营商环境...'
                 }
             ]
         };
@@ -1203,29 +1504,55 @@
         const policies = [
             {
                 id: '1',
-                title: '关于进一步优化营商环境的实施意见',
-                summary: '为持续优化营商环境，激发市场活力，现就进一步优化营商环境提出如下实施意见...',
-                content: '为持续优化营商环境，激发市场活力，现就进一步优化营商环境提出如下实施意见：\n\n一、总体要求\n以习近平新时代中国特色社会主义思想为指导，全面贯彻党的二十大精神...',
-                category: '营商环境',
-                publishDate: '2024-01-15',
-                effectiveDate: '2024-02-01',
+                title: '2025年数字经济发展行动计划',
+                summary: '为抢抓数字经济发展机遇，推动经济高质量发展，制定2025年数字经济发展行动计划...',
+                content: '为抢抓数字经济发展机遇，推动经济高质量发展，制定2025年数字经济发展行动计划：\n\n一、总体目标\n到2025年底，数字经济核心产业增加值占GDP比重达到15%以上...\n\n二、重点任务\n1. 加快数字基础设施建设\n2. 推进产业数字化转型\n3. 培育数字经济新业态\n4. 完善数字治理体系\n\n三、保障措施\n1. 加强组织领导\n2. 加大资金支持\n3. 强化人才保障',
+                category: '数字经济',
+                publishDate: '2025-01-15',
+                effectiveDate: '2025-02-01',
                 location: '北京市',
-                tags: ['营商环境', '政策解读', '新政策'],
+                tags: ['数字经济', '政策解读', '新政策'],
                 author: '市政府办公厅',
                 isNew: true
             },
             {
                 id: '2',
-                title: '关于促进民营经济发展的若干措施',
-                summary: '为促进民营经济健康发展，激发民营经济活力，制定以下措施...',
-                content: '为促进民营经济健康发展，激发民营经济活力，制定以下措施：\n\n一、加大金融支持力度\n1. 设立民营企业发展专项资金...',
-                category: '民营经济',
-                publishDate: '2024-01-10',
-                effectiveDate: '2024-01-15',
+                title: '2025年绿色低碳发展实施方案',
+                summary: '为贯彻落实碳达峰碳中和目标，推动绿色低碳发展，制定2025年绿色低碳发展实施方案...',
+                content: '为贯彻落实碳达峰碳中和目标，推动绿色低碳发展，制定2025年绿色低碳发展实施方案：\n\n一、总体要求\n以习近平生态文明思想为指导，坚持绿色发展理念...\n\n二、主要目标\n1. 单位GDP能耗下降3.5%\n2. 可再生能源消费比重达到25%\n3. 绿色建筑占新建建筑比例达到80%\n\n三、重点措施\n1. 推进能源结构优化\n2. 加快绿色技术创新\n3. 完善绿色金融体系',
+                category: '绿色发展',
+                publishDate: '2025-01-10',
+                effectiveDate: '2025-01-15',
                 location: '北京市',
-                tags: ['民营经济', '金融支持', '政策解读'],
+                tags: ['绿色发展', '碳中和', '政策解读'],
                 author: '市发展改革委',
-                isNew: false
+                isNew: true
+            },
+            {
+                id: '3',
+                title: '2025年科技创新驱动发展政策',
+                summary: '为加快建设国际科技创新中心，提升科技创新能力，制定2025年科技创新驱动发展政策...',
+                content: '为加快建设国际科技创新中心，提升科技创新能力，制定2025年科技创新驱动发展政策：\n\n一、发展目标\n1. 全社会研发经费投入强度达到6.5%\n2. 高新技术企业数量突破3万家\n3. 技术合同成交额突破8000亿元\n\n二、重点领域\n1. 人工智能与大数据\n2. 生物医药与健康\n3. 新材料与新能源\n4. 智能制造与机器人\n\n三、支持措施\n1. 加大研发投入\n2. 完善创新生态\n3. 强化人才引进',
+                category: '科技创新',
+                publishDate: '2025-01-20',
+                effectiveDate: '2025-02-01',
+                location: '北京市',
+                tags: ['科技创新', '人工智能', '政策解读'],
+                author: '市科技局',
+                isNew: true
+            },
+            {
+                id: '4',
+                title: '2025年智慧城市建设行动计划',
+                summary: '为提升城市治理现代化水平，建设智慧城市，制定2025年智慧城市建设行动计划...',
+                content: '为提升城市治理现代化水平，建设智慧城市，制定2025年智慧城市建设行动计划：\n\n一、建设目标\n1. 5G网络覆盖率达到95%\n2. 智慧政务服务水平显著提升\n3. 城市治理智能化水平明显提高\n\n二、重点工程\n1. 智慧交通系统建设\n2. 智慧医疗服务平台\n3. 智慧教育资源共享\n4. 智慧社区管理平台\n\n三、保障机制\n1. 加强组织领导\n2. 完善标准规范\n3. 强化安全保障',
+                category: '智慧城市',
+                publishDate: '2025-01-25',
+                effectiveDate: '2025-03-01',
+                location: '北京市',
+                tags: ['智慧城市', '数字化转型', '政策解读'],
+                author: '市经济和信息化局',
+                isNew: true
             }
         ];
 
@@ -1340,25 +1667,36 @@
         const policyInterpretations = [
             {
                 id: '1',
-                title: '营商环境优化政策解读',
-                summary: '详细解读最新营商环境优化政策，帮助企业和个人了解政策要点',
-                content: '一、政策背景\n为持续优化营商环境，激发市场活力，市政府出台了《关于进一步优化营商环境的实施意见》。\n\n二、主要措施\n1. 简化审批流程\n2. 优化政务服务\n3. 加强监管服务\n\n三、实施时间\n本政策自2024年2月1日起实施。',
-                category: '营商环境',
-                publishDate: '2024-01-15',
+                title: '2025年数字经济发展政策解读',
+                summary: '详细解读2025年数字经济发展行动计划，帮助企业和个人了解政策要点',
+                content: '一、政策背景\n为抢抓数字经济发展机遇，推动经济高质量发展，市政府出台了《2025年数字经济发展行动计划》。\n\n二、主要措施\n1. 加快数字基础设施建设\n2. 推进产业数字化转型\n3. 培育数字经济新业态\n4. 完善数字治理体系\n\n三、实施时间\n本政策自2025年2月1日起实施。',
+                category: '数字经济',
+                publishDate: '2025-01-15',
                 author: '政策解读科',
                 isPublished: true,
-                viewCount: 156
+                viewCount: 256
             },
             {
                 id: '2',
-                title: '民营经济发展政策解读',
-                summary: '解读促进民营经济发展的政策措施，助力民营企业发展',
-                content: '一、政策目标\n促进民营经济健康发展，激发民营经济活力。\n\n二、支持措施\n1. 加大金融支持力度\n2. 优化营商环境\n3. 加强服务保障\n\n三、申请流程\n符合条件的民营企业可向相关部门申请支持。',
-                category: '民营经济',
-                publishDate: '2024-01-10',
-                author: '经济发展科',
+                title: '2025年绿色低碳发展政策解读',
+                summary: '解读2025年绿色低碳发展实施方案，助力可持续发展',
+                content: '一、政策目标\n贯彻落实碳达峰碳中和目标，推动绿色低碳发展。\n\n二、支持措施\n1. 推进能源结构优化\n2. 加快绿色技术创新\n3. 完善绿色金融体系\n\n三、申请流程\n符合条件的绿色项目可向相关部门申请支持。',
+                category: '绿色发展',
+                publishDate: '2025-01-10',
+                author: '绿色发展科',
                 isPublished: true,
-                viewCount: 89
+                viewCount: 189
+            },
+            {
+                id: '3',
+                title: '2025年科技创新政策解读',
+                summary: '解读2025年科技创新驱动发展政策，助力科技企业发展',
+                content: '一、政策背景\n为加快建设国际科技创新中心，提升科技创新能力，制定了《2025年科技创新驱动发展政策》。\n\n二、重点领域\n1. 人工智能与大数据\n2. 生物医药与健康\n3. 新材料与新能源\n4. 智能制造与机器人\n\n三、支持措施\n1. 加大研发投入\n2. 完善创新生态\n3. 强化人才引进',
+                category: '科技创新',
+                publishDate: '2025-01-20',
+                author: '科技创新科',
+                isPublished: true,
+                viewCount: 167
             }
         ];
 
@@ -1853,7 +2191,7 @@
         // 初始化政策页面
         function initPoliciesPage() {
             // 初始化筛选按钮
-            const filters = ['全部', '营商环境', '民营经济', '社会保障', '教育医疗'];
+            const filters = ['全部', '数字经济', '绿色发展', '科技创新', '智慧城市'];
             const filterContainer = document.getElementById('policyFilters');
             filterContainer.innerHTML = filters.map((filter, index) => `
                 <button onclick="filterPolicies('${filter}')" class="px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${index === 0 ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}">

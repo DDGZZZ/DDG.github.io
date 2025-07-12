@@ -64,7 +64,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pt-0">
       {/* 头部 */}
       <div className="bg-white shadow-sm">
         <div className="px-4 py-6">
@@ -227,6 +227,95 @@ export default function HomePage() {
           ))}
         </div>
       </div>
+
+      {/* 最新动态 */}
+      <div className="px-4 py-6">
+        <h2 className="text-xl font-semibold text-gray-900 mb-4">最新动态</h2>
+        <div className="space-y-4">
+          <div className="bg-white rounded-lg p-4 shadow-sm">
+            <div className="flex items-start">
+              <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                <span className="text-blue-600 text-sm">📢</span>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-medium text-gray-900 text-sm">系统维护通知</h3>
+                <p className="text-gray-600 text-xs mt-1">系统将于今晚22:00-24:00进行维护，期间部分功能可能无法使用</p>
+                <span className="text-gray-400 text-xs">2小时前</span>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white rounded-lg p-4 shadow-sm">
+            <div className="flex items-start">
+              <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                <span className="text-green-600 text-sm">✅</span>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-medium text-gray-900 text-sm">新功能上线</h3>
+                <p className="text-gray-600 text-xs mt-1">身份证办理在线预约功能已上线，支持提前预约办理时间</p>
+                <span className="text-gray-400 text-xs">1天前</span>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white rounded-lg p-4 shadow-sm">
+            <div className="flex items-start">
+              <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+                <span className="text-orange-600 text-sm">📋</span>
+              </div>
+              <div className="flex-1">
+                <h3 className="font-medium text-gray-900 text-sm">政策更新</h3>
+                <p className="text-gray-600 text-xs mt-1">《关于进一步优化营商环境的实施意见》已发布</p>
+                <span className="text-gray-400 text-xs">3天前</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 便民服务 */}
+      <div className="px-4 py-6">
+        <h2 className="text-xl font-semibold text-gray-900 mb-4">便民服务</h2>
+        <div className="grid grid-cols-2 gap-4">
+          <div className="bg-white rounded-lg p-4 shadow-sm">
+            <div className="flex items-center mb-3">
+              <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                <span className="text-blue-600 text-sm">🏥</span>
+              </div>
+              <h3 className="font-medium text-gray-900 text-sm">医疗健康</h3>
+            </div>
+            <p className="text-gray-600 text-xs">预约挂号、健康档案查询</p>
+          </div>
+          <div className="bg-white rounded-lg p-4 shadow-sm">
+            <div className="flex items-center mb-3">
+              <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                <span className="text-green-600 text-sm">🎓</span>
+              </div>
+              <h3 className="font-medium text-gray-900 text-sm">教育服务</h3>
+            </div>
+            <p className="text-gray-600 text-xs">学籍查询、教育缴费</p>
+          </div>
+          <div className="bg-white rounded-lg p-4 shadow-sm">
+            <div className="flex items-center mb-3">
+              <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                <span className="text-purple-600 text-sm">🏠</span>
+              </div>
+              <h3 className="font-medium text-gray-900 text-sm">住房服务</h3>
+            </div>
+            <p className="text-gray-600 text-xs">房产查询、公积金服务</p>
+          </div>
+          <div className="bg-white rounded-lg p-4 shadow-sm">
+            <div className="flex items-center mb-3">
+              <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center mr-3">
+                <span className="text-orange-600 text-sm">🚗</span>
+              </div>
+              <h3 className="font-medium text-gray-900 text-sm">交通出行</h3>
+            </div>
+            <p className="text-gray-600 text-xs">违章查询、公交查询</p>
+          </div>
+        </div>
+      </div>
+
+      {/* 底部间距 */}
+      <div className="h-8"></div>
     </div>
   );
 } 

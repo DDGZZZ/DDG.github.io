@@ -12,10 +12,10 @@ export default function PoliciesPage() {
 
   const categories = [
     { id: 'all', label: '全部' },
-    { id: '营商环境', label: '营商环境' },
-    { id: '民营经济', label: '民营经济' },
-    { id: '社会保障', label: '社会保障' },
-    { id: '教育医疗', label: '教育医疗' }
+    { id: '数字经济', label: '数字经济' },
+    { id: '绿色发展', label: '绿色发展' },
+    { id: '科技创新', label: '科技创新' },
+    { id: '智慧城市', label: '智慧城市' }
   ];
 
   const filteredPolicies = filterCategory === 'all' 

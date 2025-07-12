@@ -215,6 +215,9 @@ export default function ProfilePage() {
           </div>
         </div>
       )}
+
+      {/* 底部间距 */}
+      <div className="h-32"></div>
     </div>
   );
 } 

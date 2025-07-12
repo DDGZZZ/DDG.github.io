@@ -168,6 +168,9 @@ export default function TransactionDetailPage() {
           在线办理
         </button>
       </div>
+
+      {/* 底部间距 */}
+      <div className="h-32"></div>
     </div>
   );
 } 
