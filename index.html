@@ -88,6 +88,8 @@
             background-color: #eff6ff;
         }
         
+
+        
         /* 确保登录页面始终居中显示 */
         #loginPage {
             position: fixed;
@@ -115,8 +117,8 @@
     <div id="loginPage" class="bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
         <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
             <div class="text-center mb-8">
-                <h1 class="text-3xl font-bold text-gray-900 mb-2">政务管理系统</h1>
-                <p class="text-gray-600">基于MCP的智能政务服务平台</p>
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">智"惠"民生</h1>
+                <p class="text-gray-600">基于MCP的政务服务平台</p>
             </div>
 
             <!-- 登录类型切换 -->
@@ -648,38 +650,7 @@
                         </div>
                         
                         <!-- 数据可视化图表 -->
-                        <div class="grid grid-cols-2 gap-4 mb-4">
-                            <!-- 情感分析饼图 -->
-                            <div class="bg-white rounded-lg p-3">
-                                <h4 class="text-sm font-medium text-gray-700 mb-2">情感分布</h4>
-                                <div class="flex items-center justify-center h-20">
-                                    <div class="relative w-16 h-16">
-                                        <svg class="w-16 h-16 transform -rotate-90">
-                                            <circle cx="32" cy="32" r="28" stroke="#e5e7eb" stroke-width="4" fill="none"/>
-                                            <circle id="positiveCircle" cx="32" cy="32" r="28" stroke="#10b981" stroke-width="4" fill="none" stroke-dasharray="0 175.93"/>
-                                            <circle id="neutralCircle" cx="32" cy="32" r="28" stroke="#6b7280" stroke-width="4" fill="none" stroke-dasharray="0 175.93"/>
-                                            <circle id="negativeCircle" cx="32" cy="32" r="28" stroke="#ef4444" stroke-width="4" fill="none" stroke-dasharray="0 175.93"/>
-                                        </svg>
-                                        <div class="absolute inset-0 flex items-center justify-center">
-                                            <span id="sentimentPercent" class="text-xs font-medium text-gray-700">45%</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex justify-center space-x-2 text-xs">
-                                    <div class="flex items-center">
-                                        <div class="w-2 h-2 bg-green-500 rounded-full mr-1"></div>
-                                        <span>正面</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <div class="w-2 h-2 bg-gray-500 rounded-full mr-1"></div>
-                                        <span>中性</span>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <div class="w-2 h-2 bg-red-500 rounded-full mr-1"></div>
-                                        <span>负面</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="grid grid-cols-1 gap-4 mb-4">
                             
                             <!-- 处理效率条形图 -->
                             <div class="bg-white rounded-lg p-3">
@@ -770,10 +741,6 @@
                         </div>
                         
                         <div class="text-sm text-gray-700" id="aiSummary">
-                            <div class="mb-2">
-                                <strong>情感分析：</strong>
-                                <span id="sentimentAnalysis">正面反馈占45%，中性反馈占35%，负面反馈占20%</span>
-                            </div>
                             <div class="mb-2">
                                 <strong>热门话题：</strong>
                                 <span id="hotTopics">办理流程优化、服务态度改善、材料简化</span>
@@ -1713,8 +1680,7 @@
                 contact: '138****8888',
                 priority: 'normal',
                 department: '公安局',
-                wordCount: 89,
-                sentiment: 'neutral'
+                wordCount: 89
             },
             {
                 id: '2',
@@ -1727,8 +1693,7 @@
                 contact: '139****9999',
                 priority: 'normal',
                 department: '公安局',
-                wordCount: 76,
-                sentiment: 'positive'
+                wordCount: 76
             },
             {
                 id: '3',
@@ -1741,8 +1706,7 @@
                 contact: '137****7777',
                 priority: 'urgent',
                 department: '公安局',
-                wordCount: 82,
-                sentiment: 'negative'
+                wordCount: 82
             },
             // 市场监督管理局反馈
             {
@@ -1756,8 +1720,7 @@
                 contact: '136****6666',
                 priority: 'urgent',
                 department: '市场监督管理局',
-                wordCount: 78,
-                sentiment: 'negative'
+                wordCount: 78
             },
             {
                 id: '5',
@@ -1770,8 +1733,7 @@
                 contact: '135****5555',
                 priority: 'normal',
                 department: '市场监督管理局',
-                wordCount: 65,
-                sentiment: 'neutral'
+                wordCount: 65
             },
             // 人力资源和社会保障局反馈
             {
@@ -1785,8 +1747,7 @@
                 contact: '134****4444',
                 priority: 'normal',
                 department: '人力资源和社会保障局',
-                wordCount: 85,
-                sentiment: 'positive'
+                wordCount: 85
             },
             {
                 id: '7',
@@ -1799,8 +1760,7 @@
                 contact: '133****3333',
                 priority: 'normal',
                 department: '人力资源和社会保障局',
-                wordCount: 72,
-                sentiment: 'neutral'
+                wordCount: 72
             },
             // 民政局反馈
             {
@@ -1814,8 +1774,7 @@
                 contact: '132****2222',
                 priority: 'normal',
                 department: '民政局',
-                wordCount: 81,
-                sentiment: 'positive'
+                wordCount: 81
             },
             {
                 id: '9',
@@ -1828,8 +1787,7 @@
                 contact: '131****1111',
                 priority: 'normal',
                 department: '民政局',
-                wordCount: 58,
-                sentiment: 'neutral'
+                wordCount: 58
             },
             // 卫生健康委员会反馈
             {
@@ -1843,8 +1801,7 @@
                 contact: '130****0000',
                 priority: 'normal',
                 department: '卫生健康委员会',
-                wordCount: 62,
-                sentiment: 'neutral'
+                wordCount: 62
             },
             {
                 id: '11',
@@ -1857,8 +1814,7 @@
                 contact: '129****9999',
                 priority: 'normal',
                 department: '卫生健康委员会',
-                wordCount: 55,
-                sentiment: 'neutral'
+                wordCount: 55
             },
             // 交通局反馈
             {
@@ -1872,8 +1828,7 @@
                 contact: '128****8888',
                 priority: 'normal',
                 department: '交通局',
-                wordCount: 75,
-                sentiment: 'neutral'
+                wordCount: 75
             },
             {
                 id: '13',
@@ -1886,8 +1841,7 @@
                 contact: '127****7777',
                 priority: 'normal',
                 department: '交通局',
-                wordCount: 68,
-                sentiment: 'positive'
+                wordCount: 68
             },
             // 税务局反馈
             {
@@ -1901,8 +1855,7 @@
                 contact: '126****6666',
                 priority: 'urgent',
                 department: '税务局',
-                wordCount: 82,
-                sentiment: 'neutral'
+                wordCount: 82
             },
             {
                 id: '15',
@@ -1915,8 +1868,7 @@
                 contact: '125****5555',
                 priority: 'normal',
                 department: '税务局',
-                wordCount: 52,
-                sentiment: 'neutral'
+                wordCount: 52
             },
             // 教育局反馈
             {
@@ -1930,8 +1882,7 @@
                 contact: '124****4444',
                 priority: 'normal',
                 department: '教育局',
-                wordCount: 65,
-                sentiment: 'neutral'
+                wordCount: 65
             },
             {
                 id: '17',
@@ -1944,8 +1895,7 @@
                 contact: '123****3333',
                 priority: 'normal',
                 department: '教育局',
-                wordCount: 58,
-                sentiment: 'neutral'
+                wordCount: 58
             }
         ];
 
@@ -2549,12 +2499,7 @@
         function updateFeedbackList(items) {
             const container = document.getElementById('feedbackList');
             container.innerHTML = items.map(item => {
-                // 情感分析颜色
-                const sentimentColor = {
-                    'positive': 'text-green-600 bg-green-100',
-                    'negative': 'text-red-600 bg-red-100',
-                    'neutral': 'text-gray-600 bg-gray-100'
-                };
+                
                 
                 // 内容深度标签
                 const getDepthLabel = (wordCount) => {
@@ -2579,9 +2524,6 @@
                                         <span class="px-2 py-1 rounded-full text-xs font-medium ${
                                             item.priority === 'urgent' ? 'bg-red-100 text-red-600' : 'bg-blue-100 text-blue-600'
                                         }">${item.priority === 'urgent' ? '紧急' : '普通'}</span>
-                                        <span class="px-2 py-1 rounded-full text-xs font-medium ${sentimentColor[item.sentiment]}">
-                                            ${item.sentiment === 'positive' ? '正面' : item.sentiment === 'negative' ? '负面' : '中性'}
-                                        </span>
                                         <span class="px-2 py-1 rounded-full text-xs font-medium ${depthColor[getDepthLabel(item.wordCount)]}">
                                             ${getDepthLabel(item.wordCount)}
                                         </span>
@@ -3546,7 +3488,7 @@
                     // 默认使用全国政务服务平台
                     baseUrl = 'https://www.gjzwfw.gov.cn';
                     mobileUrl = 'https://m.gjzwfw.gov.cn';
-                    appName = '国家政务服务平台';
+                    appName = '国家智"惠"民生平台';
                 }
                 
                 const urlMap = {
@@ -3955,7 +3897,7 @@
                                 <div class="flex items-center justify-between">
                                     <div>
                                         <div class="font-medium text-gray-900">北京市朝阳区</div>
-                                        <div class="text-sm text-gray-500">北京政务服务平台</div>
+                                        <div class="text-sm text-gray-500">北京智"惠"民生平台</div>
                                     </div>
                                     <i class="fas fa-chevron-right text-gray-400"></i>
                                 </div>
@@ -3965,7 +3907,7 @@
                                 <div class="flex items-center justify-between">
                                     <div>
                                         <div class="font-medium text-gray-900">广州市天河区</div>
-                                        <div class="text-sm text-gray-500">广东政务服务平台</div>
+                                        <div class="text-sm text-gray-500">广东智"惠"民生平台</div>
                                     </div>
                                     <i class="fas fa-chevron-right text-gray-400"></i>
                                 </div>
@@ -3975,7 +3917,7 @@
                                 <div class="flex items-center justify-between">
                                     <div>
                                         <div class="font-medium text-gray-900">上海市浦东新区</div>
-                                        <div class="text-sm text-gray-500">上海政务服务平台</div>
+                                        <div class="text-sm text-gray-500">上海智"惠"民生平台</div>
                                     </div>
                                     <i class="fas fa-chevron-right text-gray-400"></i>
                                 </div>
@@ -3985,7 +3927,7 @@
                                 <div class="flex items-center justify-between">
                                     <div>
                                         <div class="font-medium text-gray-900">深圳市南山区</div>
-                                        <div class="text-sm text-gray-500">深圳政务服务平台</div>
+                                        <div class="text-sm text-gray-500">深圳智"惠"民生平台</div>
                                     </div>
                                     <i class="fas fa-chevron-right text-gray-400"></i>
                                 </div>
@@ -4097,15 +4039,6 @@
                 return;
             }
 
-            // 情感分析
-            const positiveCount = items.filter(item => item.sentiment === 'positive').length;
-            const negativeCount = items.filter(item => item.sentiment === 'negative').length;
-            const neutralCount = items.filter(item => item.sentiment === 'neutral').length;
-            
-            const positivePercent = Math.round((positiveCount / items.length) * 100);
-            const negativePercent = Math.round((negativeCount / items.length) * 100);
-            const neutralPercent = Math.round((neutralCount / items.length) * 100);
-
             // 平均字数
             const totalWords = items.reduce((sum, item) => sum + item.wordCount, 0);
             const avgWords = Math.round(totalWords / items.length);
@@ -4144,11 +4077,9 @@
             const priorities = generateImprovementPriorities(items);
 
             // 更新可视化图表
-            updateVisualizationCharts(items, positivePercent, neutralPercent, negativePercent);
+            updateVisualizationCharts(items);
             
             // 更新AI总结内容
-            document.getElementById('sentimentAnalysis').textContent = 
-                `正面反馈占${positivePercent}%，中性反馈占${neutralPercent}%，负面反馈占${negativePercent}%`;
             document.getElementById('avgWordCount').textContent = `${avgWords}字`;
             document.getElementById('hotTopics').textContent = topics.join('、');
             document.getElementById('feedbackTrend').textContent = trend;
@@ -4206,8 +4137,8 @@
             const lastWeek = Math.round(currentWeek * 0.85); // 模拟上周数据
             const growth = Math.round(((currentWeek - lastWeek) / lastWeek) * 100);
             
-            const positiveItems = items.filter(item => item.sentiment === 'positive');
-            const currentSatisfaction = Math.round((positiveItems.length / items.length) * 100);
+            const resolvedItems = items.filter(item => item.status === 'resolved');
+            const currentSatisfaction = Math.round((resolvedItems.length / items.length) * 100);
             const lastSatisfaction = currentSatisfaction - 8; // 模拟上月满意度
             
             return `本周反馈量较上周${growth > 0 ? '增长' : '减少'}${Math.abs(growth)}%，满意度${currentSatisfaction > lastSatisfaction ? '提升' : '下降'}${Math.abs(currentSatisfaction - lastSatisfaction)}%`;
@@ -4273,8 +4204,9 @@
 
         // 分析用户满意度
         function analyzeUserSatisfaction(items) {
-            const positiveItems = items.filter(item => item.sentiment === 'positive');
-            const satisfactionScore = Math.round((positiveItems.length / items.length) * 5 * 10) / 10;
+            // 基于反馈状态计算满意度
+            const resolvedItems = items.filter(item => item.status === 'resolved');
+            const satisfactionScore = Math.round((resolvedItems.length / items.length) * 5 * 10) / 10;
             
             // 模拟历史数据
             const lastMonthScore = satisfactionScore - 0.3;
@@ -4321,16 +4253,16 @@
 
         // 生成预期效果
         function generateExpectedOutcomes(items) {
-            const negativeItems = items.filter(item => item.sentiment === 'negative');
-            const negativeRate = negativeItems.length / items.length;
+            const newItems = items.filter(item => item.status === 'new');
+            const newRate = newItems.length / items.length;
             
             let satisfactionImprovement = 0;
             let efficiencyImprovement = 0;
             
-            if (negativeRate > 0.3) {
+            if (newRate > 0.3) {
                 satisfactionImprovement = 20;
                 efficiencyImprovement = 30;
-            } else if (negativeRate > 0.2) {
+            } else if (newRate > 0.2) {
                 satisfactionImprovement = 15;
                 efficiencyImprovement = 25;
             } else {
@@ -4342,21 +4274,7 @@
         }
 
         // 更新可视化图表
-        function updateVisualizationCharts(items, positivePercent, neutralPercent, negativePercent) {
-            // 更新情感分析饼图
-            const circumference = 2 * Math.PI * 28; // 圆的周长
-            const positiveDash = (positivePercent / 100) * circumference;
-            const neutralDash = (neutralPercent / 100) * circumference;
-            const negativeDash = (negativePercent / 100) * circumference;
-            
-            // 设置饼图各部分
-            document.getElementById('positiveCircle').style.strokeDasharray = `${positiveDash} ${circumference}`;
-            document.getElementById('neutralCircle').style.strokeDasharray = `${neutralDash} ${circumference}`;
-            document.getElementById('negativeCircle').style.strokeDasharray = `${negativeDash} ${circumference}`;
-            
-            // 更新中心百分比
-            document.getElementById('sentimentPercent').textContent = `${positivePercent}%`;
-            
+        function updateVisualizationCharts(items) {
             // 更新处理效率条形图
             const newCount = items.filter(item => item.status === 'new').length;
             const processingCount = items.filter(item => item.status === 'processing').length;
@@ -4380,6 +4298,8 @@
             // 更新时间趋势分析
             updateTimeTrendAnalysis(items);
         }
+        
+
 
         // 生成关键洞察
         function generateKeyInsights(items) {
@@ -4424,18 +4344,18 @@
         function generateRiskWarnings(items) {
             const warnings = [];
             
-            // 分析负面反馈集中区域
-            const negativeItems = items.filter(item => item.sentiment === 'negative');
-            if (negativeItems.length > items.length * 0.25) {
-                warnings.push('负面反馈比例较高，需重点关注');
+            // 分析新反馈比例
+            const newItems = items.filter(item => item.status === 'new');
+            if (newItems.length > items.length * 0.3) {
+                warnings.push('新反馈比例较高，需加快处理速度');
             }
             
             // 分析流程复杂问题
-            const complexProcessFeedback = negativeItems.filter(item => 
+            const complexProcessFeedback = items.filter(item => 
                 item.content.includes('流程') || item.content.includes('复杂') || item.content.includes('困难')
             );
             if (complexProcessFeedback.length > 0) {
-                warnings.push('负面反馈集中在流程复杂环节');
+                warnings.push('流程复杂问题需要优化');
             }
             
             // 分析特定区域问题
@@ -4460,17 +4380,16 @@
         // 生成改进优先级
         function generateImprovementPriorities(items) {
             const priorities = [];
-            const negativeItems = items.filter(item => item.sentiment === 'negative');
             
-            // 基于负面反馈分析优先级
-            const processIssues = negativeItems.filter(item => 
+            // 基于反馈内容分析优先级
+            const processIssues = items.filter(item => 
                 item.content.includes('流程') || item.content.includes('手续')
             );
             if (processIssues.length > 0) {
                 priorities.push('1.简化办理流程');
             }
             
-            const serviceIssues = negativeItems.filter(item => 
+            const serviceIssues = items.filter(item => 
                 item.content.includes('态度') || item.content.includes('服务') || item.content.includes('窗口')
             );
             if (serviceIssues.length > 0) {
@@ -4555,7 +4474,6 @@
         // 生成智能建议
         function generateSmartSuggestions(items) {
             const suggestions = [];
-            const negativeItems = items.filter(item => item.sentiment === 'negative');
             
             // 基于反馈内容生成具体建议
             const chaoyangFeedback = items.filter(item => 
@@ -4624,9 +4542,9 @@
         function generatePrioritySuggestions(items) {
             const suggestions = [];
             
-            // 基于情感分析的建议
-            const negativeItems = items.filter(item => item.sentiment === 'negative');
-            if (negativeItems.length > items.length * 0.3) {
+            // 基于反馈状态的建议
+            const newItems = items.filter(item => item.status === 'new');
+            if (newItems.length > items.length * 0.3) {
                 suggestions.push('加强服务培训');
             }
 
@@ -4673,5 +4591,7 @@
             return suggestions.length > 0 ? suggestions : ['持续改进服务质量'];
         }
     </script>
+</body>
+</html> 
 </body>
 </html> 
